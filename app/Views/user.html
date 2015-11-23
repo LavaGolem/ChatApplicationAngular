@@ -1,0 +1,63 @@
+﻿<div class="modal-header">
+    <button type="button" class="glyphicon glyphicon-remove pull-right glifiRemove" ng-click="cancel()"></button>
+    <h4 class="modal-title">{{user.username}}</h4>
+    {{header}}
+</div>
+
+<div class="modal-body">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-4 pull-middle container">
+            <img src="{{img}}" width="200" height="200" />
+        </div>
+        <div class="col-md-6 pull-left">
+            <fieldset>
+                <legend>Contact info</legend>
+                <dl class="dl-horizontal">
+                    <dt>Name</dt>
+                        <dd>{{user.name}}</dd>
+                    <dt>Email</dt>
+                        <dd>{{user.email}}</dd>
+                    <dt>Phone</dt>
+                        <dd>{{user.phone}}</dd>
+                    <dt>Website</dt>
+                        <dd><a href="">{{user.website}}</a></dd>
+                </dl>
+           </fieldset>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-4">
+            <fieldset>
+                <legend>Address info</legend>
+                <dl class="dl-horizontal">
+                        <dt>Street</dt>
+                            <dd>{{user.address.street}}</dd>
+                        <dt>Suite</dt>
+                            <dd>{{user.address.suite}}</dd>
+                        <dt>City</dt>
+                            <dd>{{user.address.city}}</dd>
+                        <dt>Zipcode</dt>
+                            <dd>{{user.address.zipcode}}</dd>
+                    </dl>
+            </fieldset>
+       </div>
+       <div class="col-md-6">
+            <fieldset>
+                <legend>Company info</legend>
+                <dl class="dl-horizontal">
+                        <dt>Name</dt>
+                            <dd>{{user.company.name}}</dd>
+                        <dt>Phrase</dt>
+                            <dd>{{user.company.catchPhrase}}</dd>
+                        <dt>BS</dt>
+                            <dd>{{user.company.bs}}</dd>
+                    </dl>
+            </fieldset>
+       </div>
+    </div>
+</div>
+
+<div class="modal-footer"></div>

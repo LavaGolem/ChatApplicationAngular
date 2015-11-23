@@ -1,0 +1,129 @@
+﻿<!-- Users List  !-->
+
+<div class="jumbotron">
+<div class="page-header">
+  <h1>Chat Application </h1>
+    <small> AngularJS and Bootstrap live chat web application</small>
+</div>
+ 
+</div>
+
+<div class="row">
+  <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading" id="Div1">
+                    <span class="glyphicon glyphicon-user"></span> Online users
+                    <button type="button" class="" ng-click="changeVisible()" ng-class="visibleButton"></button>
+
+            </div>
+            <div class="list-group" role="group" aria-label="...">
+                <div class="panel-body" ng-class="visibleList">
+                    <div ng-repeat ="user in users">
+                         <button type="button" class="list-group-item" ng-click="changeCollapsed(user.id)"> 
+
+                                 <div class="media"> 
+                                    <div class="media-left">
+                                         <img ng-src="{{getImage(user.id)}}" class="media-object img-rounded" alt="Cinque Terre" width="50" height="50">
+                                    </div>   
+                                    <div class="media-body">
+                                        <h4 class="media-heading" >{{ user.name }}</h4>
+                                        online
+                                    </div>
+                                  </div>
+
+                         </button>
+
+                    </div>
+                </div>
+                <div class="panel-footer" ng-class="visibleList">
+                </div>
+            </div>
+        </div>
+              <div  uib-collapse="isCollapsed">
+
+<!-- Private chat with users -->
+            <div class="panel panel-primary">
+                <div class="panel-heading" id="Div3">
+                    <span class="glyphicon glyphicon-comment"></span> <a class="a2" href="" ng-click="openModal('lg',id)">{{ userName }} </a>
+                    <button type="button" class="glyphicon glyphicon-chevron-up pull-right glifi" ng-click="changeCollapsed(0)"></button>
+                </div>
+                <div class="panel-body" data-spy="scroll" data-target=".list-group" data-offset="50" >
+                    <ul class="list-group">
+                        <li class="list-group-item lgi" ng-repeat="message in msg">
+                            <div class="media">
+
+                                <div class="media-top" ng-class="imageSide" >
+                                    <img class="media-object" ng-class="imageSide" ng-src="{{getImageMessage(message.id,message.me)}}" width="40" height="40"/>
+                                </div>
+
+                                <div class="media-body" ng-class="mediaClass">
+
+                                     <a class="a1" href="">
+                                        <h5 class="media-heading" > {{ getName(message.id,message.me)}}</h5> 
+                                    </a>
+
+
+                                    <label class="" ng-class="mediaClass">          {{message.message}}</label>
+
+                                    
+                                </div>
+                            </div>
+
+                        </li>
+                    </ul>
+                </div>
+                <div class="panel-footer">
+                    <div class="input-group">
+                        <input id="Text2" type="text"  class="form-control input-sm" placeholder="Type your message here..." ng-model="message" />
+                        <span class="input-group-btn">
+                            <button class="btn btn-warning btn-sm" id="Button2" ng-click="sendMessage()">
+                                Send</button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+   
+    </div>
+
+    </div>
+<!-- Chat Room -->
+        <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12" >
+            <div class="panel panel-primary">
+                <div class="panel-heading" id="Div2">
+                    <span class="glyphicon glyphicon-comment"></span> 
+                    Chat Room
+                    <button type="button" class="" ng-click="changeVisibleRoom()" ng-class="visibleButtonRoom"></button>
+                </div>
+                <div class="panel-body" data-spy="scroll" data-target=".list-group" data-offset="50" ng-class="visibleRoom" >
+                   <ul class="list-group">
+                        <li class="list-group-item lgi" ng-repeat="message in otherMessages" ng-hide="$first">
+                            <div class="media">
+
+                                <div class="media-left media-top">
+                                    <img class="media-object" ng-src="{{getImageMessage(message.id,message.me)}}" width="30" height="30"/>
+                                </div>
+
+                                <div class="media-body">
+                                    <a class="a1" href="">
+                                        <h5 class="media-heading"> {{ getName(message.id,message.me)}}</h5> 
+                                    </a>
+                                     {{message.message}}
+                                </div>
+                            </div>
+
+                        </li>
+                    </ul>
+                </div>
+                <div class="panel-footer" ng-class="visibleRoom">
+                    <div class="input-group">
+                        <input id="Text1" type="text"  class="form-control input-sm" placeholder="Type your message here..."  ng-model="message2"/>
+                        <span class="input-group-btn">
+                            <button class="btn btn-warning btn-sm" id="Button1" ng-click="sendMessageRoom()" >
+                                Send</button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+
