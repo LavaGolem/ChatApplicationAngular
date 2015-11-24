@@ -19,7 +19,7 @@
         $scope.cdate = new Date();
 
 
-
+        $scope.randomInterval = Math.floor((Math.random() * 10000) + 3000)
         //Get users from server
         $http.get("http://jsonplaceholder.typicode.com/users")
         .success(function (response) {
@@ -28,7 +28,7 @@
             for (var i = 0 ; i < $scope.users.length; i++) {
                 $scope.usersImages.push({ image: $scope.images[i], id: $scope.users[i].id });
             }
-            $interval(function () { $scope.getNewMessages(); }, 5000);
+            $interval(function () { $scope.getNewMessages(); }, $scope.randomInterval);
             
         });
         
@@ -104,7 +104,7 @@
 
             $scope.allMessages.push({ message: $scope.message, id: $scope.id, me: true });
             $scope.msg.push({ message: $scope.message, id: $scope.id, me: true });
-            $timeout(function () { $scope.respondMessage(); }, 1000);
+            $timeout(function () { $scope.respondMessage(); }, $scope.randomInterval);
             $scope.message = '';
 
         }

@@ -1,6 +1,6 @@
 ﻿app.factory('ChatService', ['$http', function ($http) {
 
-    var getUsers = function () {
+   /* var getUsers = function () {
         $http.get("http://jsonplaceholder.typicode.com/users")
         .success(function (response) {
             return response;
@@ -22,7 +22,11 @@
     */
     
     var getMessages = function () {
-        return ['Hello','Fine thank you','How do you do'];
+        return ["Don't Panic.", "Would it save you a lot of time if I just gave up and went mad now?", "The ships hung in the sky in much the same way that bricks don't.",
+        "If there's anything more important than my ego around, I want it caught and shot now.", "Ford... you're turning into a penguin. Stop it.", "So long, and thanks for all the fish.",
+        "I think you ought to know I'm feeling very depressed.", "42", "So once you do know what the question actually is, you'll know what the answer means.",
+        "Very deep. You should send that in to the Reader's Digest. They've got a page for people like you.", "Mostly harmless", "Fifteen years was a long time to be stranded anywhere, particularly somewhere as mind-boggingly dull as Earth."
+        , "He's spending a year dead for tax reasons."];
     };
     var getImages = function () {
         return ['http://static6.businessinsider.com/image/558d9fd36da811040de177dd-1200-900/harry-potter-daniel-radcliffe-hogwarts-wizard-teenager-teen-5.jpg',
@@ -38,7 +42,7 @@
         ];
     };
     return {
-        getUsers: getUsers,
+        //getUsers: getUsers,
         getMessages: getMessages,
         getImages: getImages
     }

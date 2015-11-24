@@ -58,12 +58,12 @@
 
                                 <div class="media-body" ng-class="mediaClass">
                                 <div class="row">
-                                    <div class="col-md-6" ng-class="timeClass2">
+                                    <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6" ng-class="timeClass2">
                                         <a class="a1" href="">
                                             <h5 class="media-heading" >{{ getName(message.id,message.me)}}</h5> 
                                         </a>
                                     </div>
-                                    <div class="col-md-6" ng-class="timeClass">
+                                    <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6" ng-class="timeClass">
                                         <small class="" ng-class="timeClass"><span class="glyphicon glyphicon-time" >{{cdate | date:'hh:mm a'}}</span></small>
                                     </div>
 
@@ -109,7 +109,10 @@
 
                                 <div class="media-body">
                                     <a class="a1" href="">
-                                        <h5 class="media-heading"> {{ getName(message.id,message.me)}}</h5> 
+                                        <h5 class="media-heading "> {{ getName(message.id,message.me)}}
+                                            <small class="pull-right" ><span class="glyphicon glyphicon-time" >{{cdate | date:'hh:mm a'}}</span></small>
+                                        </h5> 
+                                         
                                     </a>
                                      {{message.message}}
                                 </div>
