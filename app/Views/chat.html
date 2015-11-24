@@ -1,12 +1,13 @@
 ﻿<!-- Users List  !-->
 
 <div class="jumbotron">
-<div class="page-header">
-  <h1>Chat Application </h1>
-    <small> AngularJS and Bootstrap live chat web application</small>
+    <div class="page-header">
+      <h1>Chat Application</h1>
+       <small> AngularJS and Bootstrap live chat web application</small>
+    </div>
 </div>
- 
-</div>
+
+
 
 <div class="row">
   <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
@@ -26,7 +27,9 @@
                                          <img ng-src="{{getImage(user.id)}}" class="media-object img-rounded" alt="Cinque Terre" width="50" height="50">
                                     </div>   
                                     <div class="media-body">
-                                        <h4 class="media-heading" >{{ user.name }}</h4>
+                                        <h4 class="media-heading" >{{ user.name }}
+                                           <span class="badge pull-right">{{getUnreadCount(user.id)}}</span>
+                                        </h4>
                                         online
                                     </div>
                                   </div>
