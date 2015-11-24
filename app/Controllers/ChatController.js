@@ -16,6 +16,7 @@
         $scope.down = true;
         $scope.downRoom = false;
         $scope.mediaClass = '';
+        $scope.cdate = new Date();
 
 
 
@@ -44,12 +45,17 @@
             if (me === true) {
                 $scope.mediaClass = 'text-left';
                 $scope.imageSide = 'pull-left';
+                $scope.timeClass = 'pull-right';
+                $scope.timeClass2 = 'pull-left';
                 return 'https://scontent-fra3-1.xx.fbcdn.net/hphotos-xat1/v/t1.0-9/s720x720/12027525_506301819529464_3109512832249956597_n.jpg?oh=51c928734dbb19570cd104bb216ed241&oe=56EC1C3B';
 
             }
             else {
                 $scope.imageSide = 'pull-right';
                 $scope.mediaClass = 'text-right';
+                $scope.timeClass = 'pull-left';
+                $scope.timeClass2 = 'pull-right';
+
 
 
                 return $scope.getImage(id);

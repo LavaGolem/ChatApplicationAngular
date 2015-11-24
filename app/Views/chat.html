@@ -57,15 +57,19 @@
                                 </div>
 
                                 <div class="media-body" ng-class="mediaClass">
+                                <div class="row">
+                                    <div class="col-md-6" ng-class="timeClass2">
+                                        <a class="a1" href="">
+                                            <h5 class="media-heading" >{{ getName(message.id,message.me)}}</h5> 
+                                        </a>
+                                    </div>
+                                    <div class="col-md-6" ng-class="timeClass">
+                                        <small class="" ng-class="timeClass"><span class="glyphicon glyphicon-time" >{{cdate | date:'hh:mm a'}}</span></small>
+                                    </div>
 
-                                     <a class="a1" href="">
-                                        <h5 class="media-heading" > {{ getName(message.id,message.me)}}</h5> 
-                                    </a>
-
-
-                                    <label class="" ng-class="mediaClass">          {{message.message}}</label>
-
-                                    
+                                </div>
+                                    <h6 class="" ng-class="mediaClass">{{message.message}}</h6>
+                                                                        
                                 </div>
                             </div>
 
